@@ -2,7 +2,10 @@ pipeline {
     agent any
     stages {
         stage ('Just Test'){
-            shell 'echo deu certp!'
+            steps{
+                shell 'echo deu certo!'
+            }
+            
         }
     }
 }
