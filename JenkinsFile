@@ -64,6 +64,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy Prod'){
+            steps{
+                sh 'docker-compose build' //gerar as imagens
+                sh 'docker-compose up -d' //para subir e -d= liberar o terminal
+            }
+        }
     }
 }
 
