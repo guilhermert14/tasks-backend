@@ -71,6 +71,15 @@ pipeline {
                 sh 'docker-compose up -d' //para subir e -d= liberar o terminal
             }
         }
+
+        stage('Health Check'){
+            steps{
+                sleep(70)
+                dir('functional-test') {
+                    sh 'mvn verify -Dskip.surefire.tests'
+                }
+            }
+        }
     }
 }
 
